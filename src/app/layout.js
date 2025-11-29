@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Mobile Terminal Portfolio',
-  description: 'Interactive terminal-style portfolio',
+  title: 'Andrew Dosumu',
+  description: 'Andrew Dosumu\'s cool Portfolio',
 }
 
 export default function RootLayout({ children }) {

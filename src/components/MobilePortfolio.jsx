@@ -308,6 +308,7 @@ const MobilePortfolio = () => {
     const [currentLoaderText, setCurrentLoaderText] = useState('');
     const terminalRef = useRef(null);
     const inputRef = useRef(null);
+    const typingTimeoutsRef = useRef([]);
     const [terminalDisabled, setTerminalDisabled] = useState(false); 
     
     // Game States
@@ -357,7 +358,7 @@ const MobilePortfolio = () => {
 
 
     const [bootLines] = useState([
-        { text: 'STARTING MOBILE PORTFOLIO OS V2.1', delay: 0 },
+        { text: 'STARTING ANDREW DOSUMU OS V2.1', delay: 0 },
         { text: 'INITIALIZING MODULES AND DEPENDENCIES...', delay: 1500 },
         { text: 'DEVICE: Mobile display detected. For the full immersive experience, please visit on a larger screen.', delay: 3000 },
         { text: 'VERIFYING USER PROFILE DATA... [ OK ]', delay: 4500 },
@@ -774,7 +775,8 @@ const MobilePortfolio = () => {
                             return newHistory;
                         });
                         index++;
-                        setTimeout(typeChar, 20);
+                        const timeoutId = setTimeout(typeChar, 20);
+                        typingTimeoutsRef.current.push(timeoutId);
                     } else {
                         setHistory(prev => {
                             const newHistory = [...prev];
@@ -812,7 +814,8 @@ const MobilePortfolio = () => {
                                 return newHistory;
                             });
                             index++;
-                            setTimeout(typeChar, 20);
+                            const timeoutId = setTimeout(typeChar, 20);
+                            typingTimeoutsRef.current.push(timeoutId);
                         } else {
                             setHistory(prev => {
                                 const newHistory = [...prev];
@@ -893,7 +896,8 @@ const MobilePortfolio = () => {
                             return newHistory;
                         });
                         index++;
-                        setTimeout(typeChar, 15);
+                        const timeoutId = setTimeout(typeChar, 15);
+                        typingTimeoutsRef.current.push(timeoutId);
                     } else {
                         setHistory(prev => {
                             const newHistory = [...prev];
@@ -926,7 +930,8 @@ const MobilePortfolio = () => {
                             return newHistory;
                         });
                         index++;
-                        setTimeout(typeChar, 25);
+                        const timeoutId = setTimeout(typeChar, 25);
+                        typingTimeoutsRef.current.push(timeoutId);
                     } else {
                         setHistory(prev => {
                             const newHistory = [...prev];
@@ -1357,7 +1362,8 @@ This is where the magic happens! Based on the approved design, I'll translate ev
                             return newHistory;
                         });
                         index++;
-                        setTimeout(typeChar, 20);
+                        const timeoutId = setTimeout(typeChar, 20);
+                        typingTimeoutsRef.current.push(timeoutId);
                     } else {
                         setHistory(prev => {
                             const newHistory = [...prev];
@@ -1375,6 +1381,15 @@ This is where the magic happens! Based on the approved design, I'll translate ev
 
     const processCommand = useCallback((cmd) => {
         const command = cmd.toLowerCase();
+        
+        // Cancel all ongoing typing animations
+        typingTimeoutsRef.current.forEach(timeoutId => clearTimeout(timeoutId));
+        typingTimeoutsRef.current = [];
+        
+        // Convert any typing entries to output entries immediately
+        setHistory(prev => prev.map(entry => 
+            entry.type === 'typing' ? { ...entry, type: 'output' } : entry
+        ));
         
         // 1. Add command to history
         setHistory(prev => [...prev, { type: 'command', text: cmd }]);
@@ -1558,11 +1573,11 @@ This is where the magic happens! Based on the approved design, I'll translate ev
                         <AnimatedProfileImage />
                     </div>
                 ) : entry.type === 'typing' ? (
-                    <div className="pl-4 leading-relaxed whitespace-pre-wrap">
+                    <div className="pl-4 leading-relaxed whitespace-pre-wrap select-none">
                         {renderOutputText(entry.text)}<span className="animate-pulse">|</span>
                     </div>
                 ) : (
-                    <div className="pl-4 leading-relaxed whitespace-pre-wrap">
+                    <div className="pl-4 leading-relaxed whitespace-pre-wrap select-none">
                         {renderOutputText(entry.text)}
                     </div>
                 )}
@@ -1606,7 +1621,7 @@ This is where the magic happens! Based on the approved design, I'll translate ev
             <div className="flex justify-between items-center text-xs py-1 px-2 border-b border-green-900 mb-2 font-mono text-green-500">
                 <div className="flex items-center space-x-2">
                     <Terminal size={12} />
-                    <span>PORTFOLIO_V2.1_TITAN</span>
+                    <span>ANDREW_DOSUMU_V2.1</span>
                 </div>
                 <div className="flex items-center space-x-3">
                     <RefreshCw 
