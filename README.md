@@ -34,6 +34,16 @@ The portfolio includes 15+ classic games:
 - **Simulation Games**: Drive XS, Retro Racing
 - **Strategy Games**: Pacman
 
+### AI-Powered Games
+
+Several games feature intelligent AI opponents using the **Minimax algorithm**:
+
+- **Tic Tac Toe** - Unbeatable AI that plays optimally every move
+- **Cyber Connect 4** - Strategic AI opponent using minimax with alpha-beta pruning
+- **Pong** - Smart computer player that adapts to ball trajectory
+
+These implementations showcase game theory and decision-making algorithms, demonstrating advanced algorithmic thinking in game development.
+
 ## Getting Started
 
 ### Prerequisites
