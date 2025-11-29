@@ -4,8 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true  // Required for static export
   },
-  // Required for GitHub Pages deployment with repository name
-  basePath: '/my-portfolio-terminal',
+  // Note: basePath removed for custom domain deployment
+  // If deploying to GitHub Pages without custom domain, uncomment:
+  // basePath: '/my-portfolio-terminal',
 }
 
 module.exports = nextConfig
