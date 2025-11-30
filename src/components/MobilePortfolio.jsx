@@ -913,7 +913,7 @@ const MobilePortfolio = () => {
         'contact': {
             output: (setHistory, printOutput) => {
                 const displayText = "Email: **dev@andrewdosumu.com**\nLinkedIn: **linkedin.com/in/andrew-dosumu**\nGitHub: **github.com/cyber-turtle**\nPortfolio: **well youre here already, what else you expecting, a cookie?**";
-                const finalText = "Email: **<u><a href='mailto:dev@andrewdosumu.com' style='color: #38ef7d; text-decoration: underline;'>admin@andrewdosumu.com</a></u>**\nLinkedIn: **<u><a href='https://www.linkedin.com/in/andrew-dosumu-491094255?utm_source=share_via&utm_content=profile&utm_medium=member_ios' target='_blank' style='color: #38ef7d; text-decoration: underline;'>linkedin.com/in/andrew-dosumu</a></u>**\nGitHub: **<u><a href='https://github.com/cyber-turtle' target='_blank' style='color: #38ef7d; text-decoration: underline;'>github.com/cyber-turtle</a></u>**\nPortfolio: **well youre here already, what else you expecting, a cookie?**";
+                const finalText = "Email: **<u><a href='mailto:dev@andrewdosumu.com' style='color: #38ef7d; text-decoration: underline;'>dev@andrewdosumu.com</a></u>**\nLinkedIn: **<u><a href='https://www.linkedin.com/in/andrew-dosumu-491094255?utm_source=share_via&utm_content=profile&utm_medium=member_ios' target='_blank' style='color: #38ef7d; text-decoration: underline;'>linkedin.com/in/andrew-dosumu</a></u>**\nGitHub: **<u><a href='https://github.com/cyber-turtle' target='_blank' style='color: #38ef7d; text-decoration: underline;'>github.com/cyber-turtle</a></u>**\nPortfolio: **well youre here already, what else you expecting, a cookie?**";
                 
                 let currentText = '';
                 let index = 0;
