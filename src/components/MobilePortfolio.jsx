@@ -912,7 +912,7 @@ const MobilePortfolio = () => {
         },
         'contact': {
             output: (setHistory, printOutput) => {
-                const fullText = "Email: **tooni.dev@example.com**\nLinkedIn: **linkedin.com/in/tooni-dev**\nGitHub: **github.com/tooni-dev**\nPortfolio: **Visit on desktop for full experience**";
+                const fullText = "Email: **<u><a href='mailto:dev@andrewdosumu.com' style='color: #38ef7d; text-decoration: underline;'>dev@andrewdosumu.com</a></u>**\nLinkedIn: **<u><a href='https://www.linkedin.com/in/andrew-dosumu-491094255?utm_source=share_via&utm_content=profile&utm_medium=member_ios' target='_blank' style='color: #38ef7d; text-decoration: underline;'>linkedin.com/in/andrew-dosumu</a></u>**\nGitHub: **<u><a href='https://github.com/cyber-turtle' target='_blank' style='color: #38ef7d; text-decoration: underline;'>github.com/cyber-turtle</a></u>**\nPortfolio: **well youre here already, what else you expecting, a cookie?**";
                 
                 let currentText = '';
                 let index = 0;
@@ -1541,7 +1541,12 @@ This is where the magic happens! Based on the approved design, I'll translate ev
     const renderOutputText = (text) => {
         const parts = text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
             if (part.startsWith('**') && part.endsWith('**')) {
-                return <span key={index} className="text-green-300 font-bold">{part.slice(2, -2)}</span>;
+                const content = part.slice(2, -2);
+                // Check if content contains HTML links
+                if (content.includes('<a href=')) {
+                    return <span key={index} className="text-green-300 font-bold" dangerouslySetInnerHTML={{__html: content}} />;
+                }
+                return <span key={index} className="text-green-300 font-bold">{content}</span>;
             }
             return part; 
         });
