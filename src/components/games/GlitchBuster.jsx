@@ -57,7 +57,7 @@ const GlitchBuster = () => {
       <div className="relative w-full max-w-[400px] md:max-w-[700px] aspect-square border border-green-500 bg-black overflow-hidden">
         <iframe
           ref={iframeRef}
-          src="/glitch-buster/index.html"
+          src="glitch-buster/index.html"
           className="w-full h-full border-none"
           title="Glitch Buster Game"
         />

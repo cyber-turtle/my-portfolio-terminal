@@ -31,7 +31,7 @@ const WayOut = () => {
       <div className="relative w-full max-w-[400px] md:max-w-[600px] aspect-square border border-green-500 bg-black overflow-hidden">
         <iframe
           ref={iframeRef}
-          src="/way-out/index.html"
+          src="way-out/index.html"
           className="w-full h-full border-none"
           title="Way Out Game"
         />

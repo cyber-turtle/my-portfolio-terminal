@@ -205,7 +205,7 @@ const DriveXS = ({ showSettings, onSettingsToggle, isMuted, onMuteToggle }) => {
       <div className="relative w-full max-w-[90vw] aspect-[4/3] border border-green-500 bg-black overflow-hidden">
         <iframe
           ref={iframeRef}
-          src="/drivexs/index.html"
+          src="drivexs/index.html"
           className="w-full h-full border-none"
           style={{
             backgroundColor: 'black'

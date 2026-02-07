@@ -26,7 +26,7 @@ const OhFlip = () => {
       <div className="relative w-full max-w-[600px] aspect-[4/3] border border-green-500 bg-black overflow-hidden">
         <iframe
           ref={iframeRef}
-          src="/oh-flip/index.html"
+          src="oh-flip/index.html"
           className="w-full h-full border-none"
           title="Oh Flip Game"
         />

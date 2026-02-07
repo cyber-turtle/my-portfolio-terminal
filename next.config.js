@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Enable static HTML export
+  output: 'export',
   images: {
-    unoptimized: true  // Required for static export
+    unoptimized: true
   },
-  // Note: basePath removed for custom domain deployment
-  // If deploying to GitHub Pages without custom domain, uncomment:
-  // basePath: '/my-portfolio-terminal',
+  basePath: '/my-portfolio-terminal',
+  assetPrefix: '/my-portfolio-terminal/',
 }
 
 module.exports = nextConfig

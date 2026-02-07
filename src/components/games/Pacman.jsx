@@ -86,7 +86,7 @@ const Pacman = ({ onPause, onVolumeToggle, isPaused, isMuted }) => {
       <div className="relative w-full max-w-[800px] aspect-square border border-green-500 bg-black overflow-hidden">
         <iframe
           ref={iframeRef}
-          src="/pacman-game/index.html"
+          src="pacman-game/index.html"
           className="w-full h-full border-none"
           style={{
             backgroundColor: 'black'

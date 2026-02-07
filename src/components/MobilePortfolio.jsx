@@ -245,7 +245,7 @@ const AnimatedProfileImage = ({ onComplete }) => {
                 style={{ width: '150px', height: `${imageHeight}px` }}
             >
                 <img 
-                    src="/profile-me.jpg" 
+                    src="profile-me.jpg" 
                     alt="Profile" 
                     className="w-full h-full object-cover"
                     style={{
